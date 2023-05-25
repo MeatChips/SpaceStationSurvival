@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float crouchSpeed = 6f;
 
     [Header("Jumping/Gravity/Diving Parameters")]
-    private float gravity = -1f;
+    private float gravity = -30f;
     private float jumpHeight = 2.4f;
     [SerializeField] private bool isFalling;
 
@@ -29,7 +29,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool hittingRoof;
 
     [Header("Particles")]
-    //[SerializeField] private GameObject landParticle;
+
+    [Header("Jetpack")]
+    private float flySpeed = 10;
+    private float levitationSpeed = 10;
+
+    private Vector3 moveDirection;
 
     Vector3 Velocity;
     bool isGrounded;
@@ -96,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region Movement
+
     public void Movement()
     {
         if (Input.GetKey(KeyCode.LeftShift))
@@ -165,6 +171,30 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("CANNOT STAND UP");
         }
+    }
+    #endregion
+
+    #region Jetpack
+    public void JetpackFly()
+    {
+        moveDirection = Vector3.up * levitationSpeed * Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            characterController.Move(moveDirection);
+        }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            characterController.Move(-moveDirection);
+        }
+    }
+
+    public void JetpackMove()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        Vector3 flyMove = transform.right * x + transform.forward * z;
+        characterController.Move(flyMove * flySpeed * Time.deltaTime);
     }
     #endregion
 }
