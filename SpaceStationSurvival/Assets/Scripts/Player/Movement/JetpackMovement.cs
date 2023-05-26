@@ -27,17 +27,19 @@ public class JetpackMovement : MonoBehaviour
         JetpackMove();
 
         JetpackFly();
+
+        //JetpackRotate();
     }
 
     public void JetpackFly()
     {
         moveDirection = Vector3.up * levitationSpeed * Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.Space))
         {
             characterController.Move(moveDirection);
         }
-        else if (Input.GetKey(KeyCode.Q))
+        else if (Input.GetKey(KeyCode.LeftShift))
         {
             characterController.Move(-moveDirection);
         }
@@ -50,4 +52,17 @@ public class JetpackMovement : MonoBehaviour
         Vector3 flyMove = transform.right * x + transform.forward * z;
         characterController.Move(flyMove);
     }
+
+    //public void JetpackRotate()
+    //{
+    //    if (Input.GetKey(KeyCode.Q))
+    //    {
+    //        transform.Rotate(new Vector3(0, 0, 20) * Time.deltaTime);
+    //    }
+    //
+    //    if (Input.GetKey(KeyCode.E))
+    //    {
+    //        transform.Rotate(new Vector3(0, 0, -20) * Time.deltaTime);
+    //    }
+    //}
 }

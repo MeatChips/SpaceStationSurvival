@@ -30,12 +30,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Particles")]
 
-    [Header("Jetpack")]
-    private float flySpeed = 10;
-    private float levitationSpeed = 10;
-
-    private Vector3 moveDirection;
-
     Vector3 Velocity;
     bool isGrounded;
 
@@ -101,7 +95,6 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region Movement
-
     public void Movement()
     {
         if (Input.GetKey(KeyCode.LeftShift))
@@ -140,17 +133,17 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region Crouching
-    void StartCrouch()
+    public void StartCrouch()
     {
         characterController.height = Mathf.Lerp(characterController.height, 2.2f, 7 * Time.deltaTime);
     }
 
-    void StopCrouch()
+    public void StopCrouch()
     {
         // Checking if the player is hitting the roof
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, 2))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, 1))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.up) * hit.distance, Color.yellow);
             //Debug.Log("Did Hit");
@@ -171,30 +164,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("CANNOT STAND UP");
         }
-    }
-    #endregion
-
-    #region Jetpack
-    public void JetpackFly()
-    {
-        moveDirection = Vector3.up * levitationSpeed * Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            characterController.Move(moveDirection);
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            characterController.Move(-moveDirection);
-        }
-    }
-
-    public void JetpackMove()
-    {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        Vector3 flyMove = transform.right * x + transform.forward * z;
-        characterController.Move(flyMove * flySpeed * Time.deltaTime);
     }
     #endregion
 }
