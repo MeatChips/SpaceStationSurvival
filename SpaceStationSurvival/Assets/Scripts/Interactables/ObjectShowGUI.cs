@@ -30,8 +30,29 @@ public class ObjectShowGUI : MonoBehaviour
     {
         if (showGui && Input.GetKeyDown(KeyCode.E))
         {
-            playerStats.RestoreHealth(100); //Do some stuffs like health
-            Destroy(gameObject); //Remove the item
+            if(message.Contains("restore"))
+            {
+                playerStats.RestoreHealth(100); //Do some stuff
+                Destroy(gameObject); //Remove the item
+            }
+
+            if (message.Contains("drink"))
+            {
+                playerStats.RestoreThirst(100); //Do some stuff
+                Destroy(gameObject); //Remove the item
+            }
+
+            if (message.Contains("eat"))
+            {
+                playerStats.RestoreHunger(100); //Do some stuff
+                Destroy(gameObject); //Remove the item
+            }
+
+            if (message.Contains("breath"))
+            {
+                playerStats.RestoreOxygen(100); //Do some stuff
+                Destroy(gameObject); //Remove the item
+            }
         }
     }
 }

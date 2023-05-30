@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class MovementSwitcher : MonoBehaviour
 {
+    [Header("Movement Systems")]
     public PlayerMovement playerMovement;
     public JetpackMovement jetpackMovement;
 
+    [Header("Images")]
     public RawImage playerIcon;
     public RawImage jetpackIcon;
 
