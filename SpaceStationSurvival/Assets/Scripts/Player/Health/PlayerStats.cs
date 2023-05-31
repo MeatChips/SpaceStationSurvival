@@ -17,17 +17,28 @@ public class PlayerStats : MonoBehaviour
     public StatsBars oxygenBar;
 
     [Header("Timer")]
-    public float resetTimeTHO = 30.0f;
-    public float timerTHO = 30.0f;
+    // Health
+    public float timerHealth = 5.0f; //10.0f
+    private float resetTimerHealth = 5.0f;
+    // Thirst
+    public float timerThirst = 7.0f; // 20.0f
+    private float resetTimerThirst = 7.0f;
+    // Hunger
+    public float timerHunger = 5.0f; // 30.0f
+    private float resetTimerHunger = 5.0f;
+    // Oxygen
+    public float timerOxygen = 9.0f; // 15.0f
+    private float resetTimerOxygen = 9.0f;
 
-    public float timerHealth = 10.0f;
-    public float resetTimeH = 10.0f;
-
-    // Current healths
+    [Header("Current stats")]
     [SerializeField] private float currentHealth;
     [SerializeField] private float currentThirst;
     [SerializeField] private float currentHunger;
     [SerializeField] private float currentOxygen;
+
+    public bool ThirstZero = false;
+    public bool HungerZero = false;
+    public bool OxygenZero = false;
 
 
     // Start is called before the first frame update
@@ -35,49 +46,106 @@ public class PlayerStats : MonoBehaviour
     {
         // Health
         currentHealth = maxHealth;
-
         healthBar.SetHealthSliderMax(maxHealth);
 
         // Thirst
         currentThirst = maxThirst;
-
         thirstBar.SetThirstSliderMax(maxThirst);
 
         // Hunger
         currentHunger = maxHunger;
-
         hungerBar.SetHungerSliderMax(maxHunger);
 
         // Oxygen
         currentOxygen = maxOxygen;
-
         oxygenBar.SetOxygenSliderMax(maxOxygen);
     }
 
     // Update is called once per frame
     void Update()
     {
-        timerTHO -= Time.deltaTime;
-        if (timerTHO < 0)
+        if (!ThirstZero)
         {
-            LoseThirst(5);
-            LoseHunger(5);
-            LoseOxygen(5);
-            timerTHO = resetTimeTHO;
+            timerThirst -= Time.deltaTime;
+        }
+        if(timerThirst < 0)
+        {
+            if (!ThirstZero)
+            {
+                LoseThirst(5);
+                timerThirst = resetTimerThirst;
+
+            }
+            else
+            {
+                ThirstZero = true;
+            }
         }
 
-        if (currentHunger == 0 || currentThirst == 0)
+        if (!HungerZero)
+        {
+            timerHunger -= Time.deltaTime;
+        }
+        if (timerHunger < 0)
+        {
+            if (!HungerZero)
+            {
+                LoseHunger(5);
+                timerHunger = resetTimerHunger;
+            }
+            else
+            {
+                HungerZero = true;
+            }
+        }
+
+        if (!OxygenZero)
+        {
+            timerOxygen -= Time.deltaTime;
+        }
+        if (timerOxygen < 0)
+        {
+            if (!OxygenZero)
+            {
+                LoseOxygen(5);
+                timerOxygen = resetTimerOxygen;
+            }
+            else
+            {
+                OxygenZero = true;
+            }
+        }
+
+        if (currentHunger <= 0 || currentThirst <= 0)
         {
             timerHealth -= Time.deltaTime;
             if(timerHealth < 0)
             {
                 TakeDamage(20);
-                timerHealth = resetTimeH;
+                timerHealth = resetTimerHealth;
             }
         }
 
+        StatsAreZero();
     }
 
+    public void StatsAreZero()
+    {
+        if(currentOxygen <= 0)
+        {
+            OxygenZero = true;
+        }
+
+        if (currentThirst <= 0)
+        {
+            ThirstZero = true;
+        }
+
+        if (currentHunger <= 0)
+        {
+            HungerZero = true;
+        }
+    }
 
     #region Restore stats
     public void RestoreHealth(float amount)
@@ -90,18 +158,21 @@ public class PlayerStats : MonoBehaviour
     {
         currentThirst += amount;
         thirstBar.SetThirstSlider(currentThirst);
+        ThirstZero = false;
     }
 
     public void RestoreHunger(float amount)
     {
         currentHunger += amount;
         hungerBar.SetHungerSlider(currentHunger);
+        HungerZero = false;
     }
 
     public void RestoreOxygen(float amount)
     {
         currentOxygen += amount;
         oxygenBar.SetOxygenSlider(currentOxygen);
+        OxygenZero = false;
     }
     #endregion
 
