@@ -13,6 +13,8 @@ public class MovementSwitcher : MonoBehaviour
     public RawImage playerIcon;
     public RawImage jetpackIcon;
 
+    public ParticleSystem ExhaustParticle;
+
     void Start()
     {
         jetpackIcon.enabled = false;
@@ -26,17 +28,21 @@ public class MovementSwitcher : MonoBehaviour
         {
             jetpackMovement.enabled = true;
             playerMovement.enabled = false;
-
+            // Jetpack movement
             jetpackIcon.enabled = true;
             playerIcon.enabled = false;
+
+            ExhaustParticle.Play();
         }
         else if (Input.GetKeyUp(KeyCode.Alpha2))
         {
             jetpackMovement.enabled = false;
             playerMovement.enabled = true;
-
+            // Ground movement
             jetpackIcon.enabled = false;
             playerIcon.enabled = true;
+
+            ExhaustParticle.Stop();
         }
     }
 }

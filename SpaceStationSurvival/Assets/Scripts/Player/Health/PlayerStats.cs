@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Max Bars")]
-    [SerializeField] private float maxHealth;
-    [SerializeField] private float maxThirst;
-    [SerializeField] private float maxHunger;
-    [SerializeField] private float maxOxygen;
+    [SerializeField] private float maxHealth = 100;
+    [SerializeField] private float maxThirst = 100;
+    [SerializeField] private float maxHunger = 120;
+    [SerializeField] private float maxOxygen = 200;
 
     [Header("Bars")]
     public StatsBars healthBar;
@@ -159,6 +159,11 @@ public class PlayerStats : MonoBehaviour
         currentThirst += amount;
         thirstBar.SetThirstSlider(currentThirst);
         ThirstZero = false;
+
+        if (currentThirst > maxThirst)
+        { //if current is over max
+            currentThirst = maxThirst; //reset current to max 
+        }
     }
 
     public void RestoreHunger(float amount)
@@ -166,6 +171,11 @@ public class PlayerStats : MonoBehaviour
         currentHunger += amount;
         hungerBar.SetHungerSlider(currentHunger);
         HungerZero = false;
+
+        if (currentHunger > maxHunger)
+        { //if current is over max
+            currentHunger = maxHunger; //reset current to max 
+        }
     }
 
     public void RestoreOxygen(float amount)
@@ -173,6 +183,11 @@ public class PlayerStats : MonoBehaviour
         currentOxygen += amount;
         oxygenBar.SetOxygenSlider(currentOxygen);
         OxygenZero = false;
+
+        if (currentOxygen > maxOxygen)
+        { //if current is over max
+            currentOxygen = maxOxygen; //reset current to max 
+        }
     }
     #endregion
 

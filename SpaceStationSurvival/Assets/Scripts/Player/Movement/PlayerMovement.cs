@@ -143,15 +143,15 @@ public class PlayerMovement : MonoBehaviour
         // Checking if the player is hitting the roof
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, 1))
+        if (Physics.Raycast(myCamera.transform.position, transform.TransformDirection(Vector3.up), out hit, 1))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.up) * hit.distance, Color.yellow);
+            Debug.DrawRay(myCamera.transform.position, transform.TransformDirection(Vector3.up) * hit.distance, Color.yellow);
             //Debug.Log("Did Hit");
             hittingRoof = true;
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.up) * 2, Color.white);
+            Debug.DrawRay(myCamera.transform.position, transform.TransformDirection(Vector3.up) * 2, Color.white);
             //Debug.Log("Did not Hit");
             hittingRoof = false;
         }
@@ -160,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
         {
             characterController.height = Mathf.Lerp(characterController.height, 3.7f, 7 * Time.deltaTime);
         }
-        else
+        else if(hittingRoof)
         {
             Debug.Log("CANNOT STAND UP");
         }
