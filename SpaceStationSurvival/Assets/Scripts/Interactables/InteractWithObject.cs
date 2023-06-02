@@ -19,7 +19,8 @@ public class InteractWithObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        InteractionImage.enabled = false;
+        TextUI.enabled = false;
     }
 
     // Update is called once per frame

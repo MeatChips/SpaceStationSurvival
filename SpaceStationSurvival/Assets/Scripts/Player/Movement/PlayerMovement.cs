@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jumping/Gravity/Diving Parameters")]
     private float gravity = -30f;
-    private float jumpHeight = 0.5f;
+    private float jumpHeight = .9f;
     [SerializeField] private bool isFalling;
 
     [Header("GroundCheck")]

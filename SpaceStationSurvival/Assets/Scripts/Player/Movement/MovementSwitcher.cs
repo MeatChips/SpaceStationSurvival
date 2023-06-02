@@ -13,12 +13,16 @@ public class MovementSwitcher : MonoBehaviour
     public RawImage playerIcon;
     public RawImage jetpackIcon;
 
-    public ParticleSystem ExhaustParticle;
+    public ParticleSystem ExhaustParticleLeft;
+    public ParticleSystem ExhaustParticleRight;
 
     void Start()
     {
         jetpackIcon.enabled = false;
         playerIcon.enabled = true;
+
+        ExhaustParticleLeft.Stop();
+        ExhaustParticleRight.Stop();
     }
 
     // Update is called once per frame
@@ -32,7 +36,8 @@ public class MovementSwitcher : MonoBehaviour
             jetpackIcon.enabled = true;
             playerIcon.enabled = false;
 
-            ExhaustParticle.Play();
+            ExhaustParticleLeft.Play();
+            ExhaustParticleRight.Play();
         }
         else if (Input.GetKeyUp(KeyCode.Alpha2))
         {
@@ -42,7 +47,8 @@ public class MovementSwitcher : MonoBehaviour
             jetpackIcon.enabled = false;
             playerIcon.enabled = true;
 
-            ExhaustParticle.Stop();
+            ExhaustParticleLeft.Stop();
+            ExhaustParticleRight.Stop();
         }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9083859397157459575}
   - component: {fileID: 7517213557744169987}
   - component: {fileID: 4744955412616100505}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4946913372715510994}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2711260473769094061}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jetpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4974,7 +4974,7 @@ GameObject:
   - component: {fileID: 6188461957114403488}
   - component: {fileID: 5311633380759829795}
   - component: {fileID: 8468562781358172476}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5057,7 +5057,7 @@ GameObject:
   - component: {fileID: 7854188409226988671}
   - component: {fileID: 859242276957545366}
   - component: {fileID: 6106818599642459019}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
