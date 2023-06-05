@@ -2789,6 +2789,17 @@ PrefabInstance:
       propertyPath: groundMask.m_Bits
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 733358811465934548, guid: d6e596c5ef288a141a673be66e541f50,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 733358811465934548, guid: d6e596c5ef288a141a673be66e541f50,
+        type: 3}
+      propertyPath: ImpactEffect
+      value: 
+      objectReference: {fileID: 5716711122103507877, guid: 4495ffa40ec553a41a6ec9345031ebb5,
+        type: 3}
     - target: {fileID: 6067737937667611989, guid: d6e596c5ef288a141a673be66e541f50,
         type: 3}
       propertyPath: m_RootOrder
@@ -2976,6 +2987,32 @@ PrefabInstance:
       objectReference: {fileID: 337915622}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6e596c5ef288a141a673be66e541f50, type: 3}
+--- !u!1 &1000263251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8046550774591473886, guid: d6e596c5ef288a141a673be66e541f50,
+    type: 3}
+  m_PrefabInstance: {fileID: 1000263250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1000263252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000263251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1021789464
 GameObject:
   m_ObjectHideFlags: 0
@@ -3523,6 +3560,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628419126}
   m_CullTransparentMesh: 1
+--- !u!1 &1655712244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3828593779824500257, guid: d6e596c5ef288a141a673be66e541f50,
+    type: 3}
+  m_PrefabInstance: {fileID: 1000263250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1655712248
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655712244}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4ed880604c258847aa05255fe0014e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &1777462616
 PrefabInstance:
   m_ObjectHideFlags: 0
