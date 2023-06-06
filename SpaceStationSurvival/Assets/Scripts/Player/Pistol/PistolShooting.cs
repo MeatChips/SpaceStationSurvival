@@ -10,7 +10,6 @@ public class PistolShooting : MonoBehaviour
     public ParticleSystem MuzzleFlash;
     public GameObject ImpactEffect;
 
-
     void Start()
     {
 
@@ -35,16 +34,11 @@ public class PistolShooting : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            //Target target = hit.transform.GetComponent<Target>();
-            //if (target != null)
-            //{
-            //    target.TakeDamage(Damage);
-            //}
-            //
-            //if (hit.rigidbody != null)
-            //{
-            //    hit.rigidbody.AddForce(-hit.normal * ImpactForce);
-            //}
+            TargetObject target = hit.transform.GetComponent<TargetObject>();
+            if (target != null)
+            {
+                target.TakeDamage(Damage);
+            }
 
             GameObject ImpactGO = Instantiate(ImpactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(ImpactGO, 2f);

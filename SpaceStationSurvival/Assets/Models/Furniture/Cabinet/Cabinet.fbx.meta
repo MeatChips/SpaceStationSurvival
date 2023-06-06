@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5d820e85e498c9e40a958f8d3b93df06
+guid: 7e223d4e89599574891c067b914d0d85
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: spacebox
-    second: {fileID: 2800000, guid: 0fdded783ec549741a342a8ed999880b, type: 3}
+    second: {fileID: 2800000, guid: f946b6e0afd30aa4abf66a75c5aacd2a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: spacebox
-    second: {fileID: 2800000, guid: 880b2e751a3fef746a6dc929257a65ad, type: 3}
+    second: {fileID: 2800000, guid: b9eb9c2d1d1bee747ab114f1e4c3eb82, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

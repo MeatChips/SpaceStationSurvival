@@ -6,12 +6,10 @@ public class JetpackMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController characterController;
 
-    [SerializeField] private float JetpackFuel = 300;
+    //[SerializeField] private float JetpackFuel = 300;
 
     private float flySpeed = 10;
     private float levitationSpeed = 10;
-
-    
 
     private Vector3 moveDirection;
 
