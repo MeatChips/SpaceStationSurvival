@@ -93,7 +93,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
-  JetpackFuel: 300
 --- !u!114 &8809520404732444086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +523,7 @@ GameObject:
   - component: {fileID: 7235434028068335679}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -840,6 +839,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 984267476822108330, guid: a2e8d3a32fcaad94485c8133378b7bbe,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1115369608063399457, guid: a2e8d3a32fcaad94485c8133378b7bbe,
         type: 3}
       propertyPath: m_Layer
@@ -979,6 +983,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380942891707805975, guid: 8f10a53a29576db4a842b01fad9a5253,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5195979517658294373, guid: 8f10a53a29576db4a842b01fad9a5253,
         type: 3}

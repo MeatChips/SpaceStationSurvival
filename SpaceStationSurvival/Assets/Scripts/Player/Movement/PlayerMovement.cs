@@ -162,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(hittingRoof)
         {
-            Debug.Log("CANNOT STAND UP");
+            //Debug.Log("CANNOT STAND UP");
         }
     }
     #endregion

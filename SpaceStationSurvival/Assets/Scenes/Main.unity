@@ -3837,6 +3837,7 @@ Transform:
   m_Children:
   - {fileID: 2877010672695935319}
   - {fileID: 8379654669135943387}
+  - {fileID: 1058642606}
   m_Father: {fileID: 727070382}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4808,6 +4809,11 @@ PrefabInstance:
       propertyPath: m_Cookie
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7118745822233705940, guid: d6e596c5ef288a141a673be66e541f50,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8022525350818003717, guid: d6e596c5ef288a141a673be66e541f50,
         type: 3}
       propertyPath: timeLeft
@@ -4915,32 +4921,6 @@ PrefabInstance:
       objectReference: {fileID: 337915622}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6e596c5ef288a141a673be66e541f50, type: 3}
---- !u!1 &1000263251 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8046550774591473886, guid: d6e596c5ef288a141a673be66e541f50,
-    type: 3}
-  m_PrefabInstance: {fileID: 1000263250}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1000263252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000263251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1002474700 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e223d4e89599574891c067b914d0d85,
@@ -5309,6 +5289,115 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e5d0e96741e71e409a5bdec763cb8e5, type: 3}
+--- !u!1 &1058642605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058642606}
+  - component: {fileID: 1058642609}
+  - component: {fileID: 1058642607}
+  m_Layer: 0
+  m_Name: TurretCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1058642606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058642605}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -2.083333, y: 2.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 752481153}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1058642607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058642605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 1
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+--- !u!20 &1058642609
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058642605}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1071034051
 GameObject:
   m_ObjectHideFlags: 0
@@ -8757,6 +8846,12 @@ MonoBehaviour:
   playerStats: {fileID: 543775926}
   InteractionImage: {fileID: 1628419128}
   TextUI: {fileID: 367734719}
+--- !u!4 &2119070599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6067737937667611989, guid: d6e596c5ef288a141a673be66e541f50,
+    type: 3}
+  m_PrefabInstance: {fileID: 1000263250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2124832844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8991,7 +9086,7 @@ Transform:
   m_GameObject: {fileID: 919132147801830048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20, y: 9.5, z: 100}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 533193074404363764}
@@ -9098,6 +9193,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450651740268570}
+  - component: {fileID: 919132147801830049}
+  - component: {fileID: 919132147801830051}
+  - component: {fileID: 919132147801830050}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -9105,6 +9203,48 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132147801830049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147801830048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73565ddb6e84fb6469c56cc1f4b6557d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2119070599}
+  rotationPart: {fileID: 727070382}
+  turretHead: {fileID: 2877010672695935319}
+  turretCam: {fileID: 1058642609}
+--- !u!65 &919132147801830050
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147801830048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5812237, y: 2.666667, z: 1.6105146}
+  m_Center: {x: -0.022147495, y: 0.83333343, z: -0.018819321}
+--- !u!65 &919132147801830051
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147801830048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 4.3333306, y: 2, z: 4.3333435}
+  m_Center: {x: 0, y: -0.4645117, z: 0}
 --- !u!1 &919132148754344543
 GameObject:
   m_ObjectHideFlags: 0
@@ -10406,6 +10546,7 @@ GameObject:
   - component: {fileID: 2877010672695935319}
   - component: {fileID: 4920793447936874899}
   - component: {fileID: 3292456089243597344}
+  - component: {fileID: 8720306694006305385}
   m_Layer: 0
   m_Name: Base Turret
   m_TagString: Untagged
@@ -10413,3 +10554,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8720306694006305385
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8720306694006305384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 3.9999998, y: 1.6999999, z: 1.1999999}
+  m_Center: {x: 0.0000038146973, y: 0.04999995, z: 0}
