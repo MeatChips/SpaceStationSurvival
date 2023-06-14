@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8efc3bdded84e478c771546e18186f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  Health: 20
   destroyPS: {fileID: 8002120328580734947, guid: 6026456f6e3acad41883c9df59f719ef,
     type: 3}
 --- !u!1 &2945642415986078206

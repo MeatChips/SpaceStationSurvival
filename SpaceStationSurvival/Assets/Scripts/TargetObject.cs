@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TargetObject : MonoBehaviour
 {
-    public float Health = 50f;
+    public float Health;
 
     public ParticleSystem destroyPS;
 
