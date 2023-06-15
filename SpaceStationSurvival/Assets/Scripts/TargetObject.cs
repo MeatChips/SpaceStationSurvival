@@ -19,8 +19,5 @@ public class TargetObject : MonoBehaviour
     {
         Instantiate(destroyPS, transform.position, transform.rotation);
         Destroy(gameObject);
-        //destroyPS.Play();
-        //Destroy(gameObject);
-
     }
 }

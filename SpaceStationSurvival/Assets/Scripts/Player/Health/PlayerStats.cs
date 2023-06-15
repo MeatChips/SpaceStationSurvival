@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    [Header("Canvas")]
+    [SerializeField] private Canvas DeathCanvas;
+
     [Header("Max Bars")]
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float maxThirst = 100;
@@ -44,6 +47,8 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DeathCanvas.enabled = false;
+
         // Health
         currentHealth = maxHealth;
         healthBar.SetHealthSliderMax(maxHealth);
@@ -64,6 +69,8 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Death();
+
         if (!ThirstZero)
         {
             timerThirst -= Time.deltaTime;
@@ -216,4 +223,14 @@ public class PlayerStats : MonoBehaviour
         oxygenBar.SetOxygenSlider(currentOxygen);
     }
     #endregion
+
+    public void Death()
+    {
+        if(currentHealth <= 0 || currentOxygen <= 0)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            DeathCanvas.enabled = true;
+        }
+    }
 }

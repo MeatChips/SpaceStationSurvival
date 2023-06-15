@@ -4,7 +4,6 @@ public class PistolShooting : MonoBehaviour
 {
     public float Damage = 10f;
     public float Range = 100f;
-    public float ImpactForce = 30f;
 
     public Camera fpsCam;
     public ParticleSystem MuzzleFlash;
