@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float crouchSpeed = 6f;
 
     [Header("Jumping/Gravity/Diving Parameters")]
-    private float gravity = -30f;
+    [SerializeField] private float gravity;
     private float jumpHeight = .9f;
     [SerializeField] private bool isFalling;
 
@@ -50,6 +50,15 @@ public class PlayerMovement : MonoBehaviour
     {
         groundCheck.transform.position = new Vector3(characterController.bounds.center.x, characterController.bounds.min.y, characterController.bounds.center.z);
         myCamera.transform.position = new Vector3(characterController.bounds.center.x, characterController.bounds.max.y - .5f, characterController.bounds.center.z);
+
+        if (isFalling == true)
+        {
+            gravity = 0f;
+        }
+        else if (isFalling == false)
+        {
+            gravity = -30f;
+        }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
