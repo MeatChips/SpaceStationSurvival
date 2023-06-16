@@ -2627,7 +2627,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.82
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.1
@@ -3832,7 +3832,7 @@ PrefabInstance:
     - target: {fileID: 589587820466639991, guid: c1036bf7d5f37854394e6078be699dd4,
         type: 3}
       propertyPath: m_Name
-      value: Water Bottle
+      value: Water Carton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1036bf7d5f37854394e6078be699dd4, type: 3}
@@ -6442,7 +6442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1120828963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8383,6 +8383,13 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'WASD - Ground /Jetpack Movement
 
+    Spacebar - Jump / Fly up
+
+    CTRL
+    - Crouch
+
+    Shift - Sprint / Fly down
+
     1 - Switch to Jetpack mode
 
     2
@@ -8420,8 +8427,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.32
-  m_fontSizeBase: 0.32
+  m_fontSize: 0.22
+  m_fontSizeBase: 0.22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10173,7 +10180,7 @@ PrefabInstance:
     - target: {fileID: 589587820466639991, guid: c1036bf7d5f37854394e6078be699dd4,
         type: 3}
       propertyPath: m_Name
-      value: 'Water Bottle '
+      value: Water Carton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1036bf7d5f37854394e6078be699dd4, type: 3}
@@ -11146,7 +11153,7 @@ PrefabInstance:
     - target: {fileID: 589587820466639991, guid: c1036bf7d5f37854394e6078be699dd4,
         type: 3}
       propertyPath: m_Name
-      value: Water Bottle
+      value: Water Carton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1036bf7d5f37854394e6078be699dd4, type: 3}

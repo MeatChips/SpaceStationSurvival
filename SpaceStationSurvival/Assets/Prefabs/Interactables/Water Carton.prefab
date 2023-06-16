@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3804039504855089519}
   - component: {fileID: 7734430269615179459}
   m_Layer: 0
-  m_Name: Water Bottle
+  m_Name: Water Carton
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
