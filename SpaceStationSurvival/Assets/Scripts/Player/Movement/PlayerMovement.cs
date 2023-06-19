@@ -15,7 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private float crouchSpeed = 6f;
 
     [Header("Jumping/Gravity/Diving Parameters")]
-    [SerializeField] private float gravity;
+    public float gravity;
+    public float gravityTwo;
     private float jumpHeight = .9f;
     [SerializeField] private bool isFalling;
 
@@ -28,15 +29,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float playerHeight;
     [SerializeField] private bool hittingRoof;
 
-    [Header("Particles")]
+    [Header("Other Script")]
+    [SerializeField] private MovementSwitcher movementSwitcherScript;
+    [SerializeField] private GameObject Player;
 
     Vector3 Velocity;
     bool isGrounded;
 
     void Start()
     {
-        //groundCheck.transform.position = new Vector3(characterController.bounds.center.x, characterController.bounds.center.z, characterController.bounds.min.y);
-        //playerHeight = characterController.height;
+        movementSwitcherScript = Player.GetComponent<MovementSwitcher>();
 
         characterController = GetComponent<CharacterController>();
         if (characterController == null)
@@ -50,33 +52,22 @@ public class PlayerMovement : MonoBehaviour
     {
         groundCheck.transform.position = new Vector3(characterController.bounds.center.x, characterController.bounds.min.y, characterController.bounds.center.z);
         myCamera.transform.position = new Vector3(characterController.bounds.center.x, characterController.bounds.max.y - .5f, characterController.bounds.center.z);
-
-        if (isFalling == true)
-        {
-            gravity = 0f;
-        }
-        else if (isFalling == false)
-        {
-            gravity = -30f;
-        }
-
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if (isGrounded && Velocity.y < 0)
-        {
-            Velocity.y = -2f;
-        }
+        Falling();
+        Jumping();
+        Movement();
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
-
         characterController.Move(move * moveSpeed * Time.deltaTime);
 
-        Jumping();
-        Movement();
-        Falling();
+        if (isGrounded && Velocity.y < 0)
+        {
+            Velocity.y = gravityTwo; // -2f
+        }
 
         Velocity.y += gravity * Time.deltaTime;
 
@@ -93,12 +84,16 @@ public class PlayerMovement : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.up) * hit.distance, Color.red);
             //Debug.Log("Player is not falling");
             isFalling = false;
+            gravity = -30f;
+            gravityTwo = -2f;
         }
         else
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(-Vector3.up) * 5, Color.red);
             //Debug.Log("Player is falling");
             isFalling = true;
+            gravity = 0f;
+            gravityTwo = 0f;
         }
     }
     #endregion
