@@ -71,5 +71,11 @@ public class MovementSwitcher : MonoBehaviour
 
             gM = true;
         }
+
+
+        if (Input.GetKeyUp(KeyCode.Alpha1) && !Player.GetComponent<PlayerMovement>().isFalling)
+        {
+            Player.GetComponent<PlayerMovement>().isFalling = true;
+        }
     }
 }

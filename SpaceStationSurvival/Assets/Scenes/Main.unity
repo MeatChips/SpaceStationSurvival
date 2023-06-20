@@ -6914,6 +6914,11 @@ PrefabInstance:
       objectReference: {fileID: 962320495}
     - target: {fileID: 120007481303289115, guid: d6e596c5ef288a141a673be66e541f50,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120007481303289115, guid: d6e596c5ef288a141a673be66e541f50,
+        type: 3}
       propertyPath: groundCheck
       value: 
       objectReference: {fileID: 1973268296}
@@ -6926,7 +6931,7 @@ PrefabInstance:
         type: 3}
       propertyPath: movementSwitchScript
       value: 
-      objectReference: {fileID: 2119070600}
+      objectReference: {fileID: 0}
     - target: {fileID: 733358811465934548, guid: d6e596c5ef288a141a673be66e541f50,
         type: 3}
       propertyPath: anim
@@ -7182,7 +7187,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerScript
       value: 
-      objectReference: {fileID: 2119070602}
+      objectReference: {fileID: 0}
     - target: {fileID: 8809520404732444086, guid: d6e596c5ef288a141a673be66e541f50,
         type: 3}
       propertyPath: ExhaustParticleLeft
@@ -7197,8 +7202,9 @@ PrefabInstance:
         type: 3}
       propertyPath: playerMovementScript
       value: 
-      objectReference: {fileID: 2119070602}
-    m_RemovedComponents: []
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8809520404732444086, guid: d6e596c5ef288a141a673be66e541f50, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d6e596c5ef288a141a673be66e541f50, type: 3}
 --- !u!1 &1002474700 stripped
 GameObject:
@@ -10146,26 +10152,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WASD - Ground /Jetpack Movement
+  m_text: 'WASD - Movement
 
-    Spacebar - Jump / Fly up
+    Spacebar - Fly up
 
-    CTRL
-    - Crouch
+    CTRL - Fly down
 
-    Shift - Sprint / Fly down
+    C - Crouch
 
-    1 - Switch to Jetpack mode
-
-    2
-    - Switch to Walking mode
+    Shift
+    - Sprint
 
     X - Turn on/off flashlight
 
-    E - Interact with
-    food/water/oxygen
+    F - Interact with food/water/oxygen
 
-    Left click - Shoot'
+    Left
+    click - Shoot'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10192,8 +10195,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.22
-  m_fontSizeBase: 0.22
+  m_fontSize: 0.25
+  m_fontSizeBase: 0.25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12764,30 +12767,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1000263250}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2119070600 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8809520404732444086, guid: d6e596c5ef288a141a673be66e541f50,
-    type: 3}
-  m_PrefabInstance: {fileID: 1000263250}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119070592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2788620a97df8e84cb932321e01d0538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2119070602 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 120007481303289115, guid: d6e596c5ef288a141a673be66e541f50,
-    type: 3}
-  m_PrefabInstance: {fileID: 1000263250}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119070592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 199baee61d7fd2a46bab8101493d4e12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2124832844
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity;
     public float gravityTwo;
     private float jumpHeight = .9f;
-    [SerializeField] private bool isFalling;
+    public bool isFalling;
 
     [Header("GroundCheck")]
     private float groundDistance = 0.4f;

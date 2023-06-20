@@ -44,22 +44,22 @@ public class InteractWithObject : MonoBehaviour
 
         if (message.Contains("Health"))
         {
-            TextUI.text = "Press E to heal with the " + message;
+            TextUI.text = "Press F to heal with the " + message;
         }
 
         if (message.Contains("Water"))
         {
-            TextUI.text = "Press E to drink the " + message;
+            TextUI.text = "Press F to drink the " + message;
         }
 
         if (message.Contains("Spinach"))
         {
-            TextUI.text = "Press E to eat the " + message;
+            TextUI.text = "Press F to eat the " + message;
         }
 
         if (message.Contains("Oxygen"))
         {
-            TextUI.text = "Press E to breath from the " + message;
+            TextUI.text = "Press F to breath from the " + message;
         }
     }
 
@@ -81,7 +81,7 @@ public class InteractWithObject : MonoBehaviour
                 if (NameAcquired)
                 {
                     SetTextUI();
-                    if (Input.GetKeyDown(KeyCode.E))
+                    if (Input.GetKeyDown(KeyCode.F))
                     {
                         if (message.Contains("Health"))
                         {

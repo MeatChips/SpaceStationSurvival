@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6067737937667611989}
   - component: {fileID: 3093214171793865191}
-  - component: {fileID: 120007481303289115}
-  - component: {fileID: 274326933247454083}
-  - component: {fileID: 8809520404732444086}
+  - component: {fileID: 5588927997913002271}
   - component: {fileID: 8022525350818003717}
   m_Layer: 0
   m_Name: Player
@@ -59,30 +57,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &120007481303289115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6067737937667611991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 199baee61d7fd2a46bab8101493d4e12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterController: {fileID: 0}
-  myCamera: {fileID: 6067737938080980239}
-  moveSpeed: 0
-  gravity: 0
-  isFalling: 0
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  groundCheck: {fileID: 5608064591629162760}
-  playerHeight: 0
-  hittingRoof: 0
---- !u!114 &274326933247454083
+--- !u!114 &5588927997913002271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,24 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
---- !u!114 &8809520404732444086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6067737937667611991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2788620a97df8e84cb932321e01d0538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovement: {fileID: 120007481303289115}
-  jetpackMovement: {fileID: 274326933247454083}
-  playerIcon: {fileID: 0}
-  jetpackIcon: {fileID: 0}
-  ExhaustParticleLeft: {fileID: 0}
-  ExhaustParticleRight: {fileID: 0}
+  myCamera: {fileID: 6067737938080980239}
 --- !u!114 &8022525350818003717
 MonoBehaviour:
   m_ObjectHideFlags: 0
