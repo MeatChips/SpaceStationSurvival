@@ -54,13 +54,22 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
+        SetFullScreen();
         Resolution resolution = filteredResolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, true);
+        Screen.SetResolution(resolution.width, resolution.height, isFullscreen);
     }
 
     public void SetFullScreen()
     {
         Screen.fullScreen = !Screen.fullScreen;
+        if (Screen.fullScreen)
+        {
+            isFullscreen = true;
+        }
+        else if (!Screen.fullScreen)
+        {
+            isFullscreen = false;
+        }
         print("Changed screen mode");
     }
 

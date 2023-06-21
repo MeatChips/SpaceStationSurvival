@@ -3187,6 +3187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 960922380}
+  fullScreenToggle: {fileID: 1024649146}
 --- !u!4 &1699311803
 Transform:
   m_ObjectHideFlags: 0
