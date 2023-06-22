@@ -5,27 +5,55 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
-    public void StartGame()
+    public AudioSource StartGameSrc;
+    public AudioSource GoToSettingsSrc;
+    public AudioSource GoBackToMainMenuSrc;
+
+    public void StartGame(string sceneName)
     {
         print("Game Restarted");
-        SceneManager.LoadScene("Main");
+        StartGameSrc.Play();
+        StartCoroutine(DelaySceneLoad(sceneName));
+        //if (!StartGameSrc.isPlaying)
+        //{
+        //    SceneManager.LoadScene(sceneName);
+        //}
+        //SceneManager.LoadScene("Main");
     }
 
-    public void GoToSettings()
+    public void GoToSettings(string sceneName)
     {
         print("Go To Settings");
-        SceneManager.LoadScene("Settings");
+        GoToSettingsSrc.Play();
+        StartCoroutine(DelaySceneLoad(sceneName));
+        //if (!GoToSettingsSrc.isPlaying)
+        //{
+        //    SceneManager.LoadScene(sceneName);
+        //}
+        //SceneManager.LoadScene("Settings");
     }
 
-    public void GoBackToMainMenu()
+    public void GoBackToMainMenu(string sceneName)
     {
         print("Go To Main");
-        SceneManager.LoadScene("MainMenu");
+        GoBackToMainMenuSrc.Play();
+        StartCoroutine(DelaySceneLoad(sceneName));
+        //if (!GoBackToMainMenuSrc.isPlaying)
+        //{
+        //    SceneManager.LoadScene(sceneName);
+        //}
+        //SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
     {
         print("Game Quitted");
         Application.Quit();
+    }
+
+    IEnumerator DelaySceneLoad(string name)
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene(name);
     }
 }
