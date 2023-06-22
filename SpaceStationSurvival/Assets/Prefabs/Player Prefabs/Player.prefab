@@ -71,6 +71,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
   myCamera: {fileID: 6067737938080980239}
+  moveSpeed: 0
+  playerHeight: 0
+  hittingRoof: 0
 --- !u!114 &8022525350818003717
 MonoBehaviour:
   m_ObjectHideFlags: 0

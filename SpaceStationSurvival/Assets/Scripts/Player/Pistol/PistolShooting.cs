@@ -9,9 +9,11 @@ public class PistolShooting : MonoBehaviour
     public ParticleSystem MuzzleFlash;
     public GameObject ImpactEffect;
 
+    private AudioSource shotAudioSrc;
+
     void Start()
     {
-
+        shotAudioSrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,14 +21,17 @@ public class PistolShooting : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if (!shotAudioSrc.isPlaying)
+            {
+                Shoot();
+            }
         }
     }
 
     void Shoot()
     {
         MuzzleFlash.Play();
-
+        shotAudioSrc.Play();
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, Range))

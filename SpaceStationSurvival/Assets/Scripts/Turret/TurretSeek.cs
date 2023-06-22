@@ -21,9 +21,11 @@ public class TurretSeek : MonoBehaviour
     private float timerCurrent = 0f;
     private float timerMin = 0f;
 
+    private AudioSource shotAudioSrc;
+
     void Start()
     {
-
+        shotAudioSrc = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -53,6 +55,7 @@ public class TurretSeek : MonoBehaviour
             {
                 if(timerCurrent >= timerTotal)
                 {
+                    shotAudioSrc.Play();
                     TurretShoot();
                     timerCurrent = timerMin;
                 }
