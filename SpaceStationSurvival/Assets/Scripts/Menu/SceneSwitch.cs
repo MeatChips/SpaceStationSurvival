@@ -9,6 +9,7 @@ public class SceneSwitch : MonoBehaviour
     public AudioSource GoToSettingsSrc;
     public AudioSource GoBackToMainMenuSrc;
 
+    public Animator transition;
     public void StartGame(string sceneName)
     {
         print("Game Restarted");
@@ -53,7 +54,8 @@ public class SceneSwitch : MonoBehaviour
 
     IEnumerator DelaySceneLoad(string name)
     {
-        yield return new WaitForSeconds(1.0f);
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(name);
     }
 }

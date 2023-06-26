@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpaceShipSlide
+  m_Controller: {fileID: 9100000, guid: 2d0b6f3b18b5b794cb39699d29b32342, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3fc76d4e5f860fb45a53b029755fe424, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5a132a1eb6ceac44083f177b314f3baa, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a292e6ac47640aa4fbc114b3cd7b43ff, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a2bb542bcb0cb334590e6d6a1fd92360, type: 2}
