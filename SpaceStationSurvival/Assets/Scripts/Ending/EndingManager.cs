@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Waypoint : MonoBehaviour
+public class EndingManager : MonoBehaviour
 {
-    public Image img;
-    public Transform target;
+    [SerializeField] private GameObject SpaceShip;
+    [SerializeField] private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        img.transform.position = Camera.main.WorldToScreenPoint(target.position);
+
     }
 
     // Update is called once per frame
